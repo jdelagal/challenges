@@ -8,6 +8,7 @@ import reactor.core.publisher.Mono;
 import ua.test.phonecatalog.catalogservice.exceptions.NotFoundException;
 import ua.test.phonecatalog.catalogservice.model.Phone;
 import ua.test.phonecatalog.catalogservice.repository.PhoneCatalogRepository;
+import org.json.*;
 
 @Service
 public class PhoneCatalogService {
@@ -21,6 +22,8 @@ public class PhoneCatalogService {
 	}
 
 	public Flux<Phone> find() {
+		JSONObject obj = new JSONObject("mock");
+		//return obj;
 		return this.phoneCatalogRepository.findAll();
 	}
 

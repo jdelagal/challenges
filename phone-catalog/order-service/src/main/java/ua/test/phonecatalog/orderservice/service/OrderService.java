@@ -39,6 +39,9 @@ public class OrderService {
 		final Map<String, Integer> phoneToAmount = orderDetails.stream()
 				.collect(Collectors.toMap(OrderDetails::getId, OrderDetails::getAmount));
 
+		LOGGER.info("1");	
+		return null;
+		/*	
 		return this.httpClient.retrievePhones(new ArrayList<>(phoneToAmount.keySet()))
 				.map(phone -> {
 					final Integer amount = phoneToAmount.get(phone.getId());
@@ -52,6 +55,7 @@ public class OrderService {
 					return this.orderRepository.save(order);
 				}).doOnSuccess(savedOrder -> LOGGER.info(savedOrder.toString()))
 					.doOnError(error -> LOGGER.severe("Failed to save order, msg=" + error.getMessage()));
+		*/
 	}
 
 	private static <T> Predicate<T> distinctByProperty(Function<? super T, ?> keyExtractor) {
