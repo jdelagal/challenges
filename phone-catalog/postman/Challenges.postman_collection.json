@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "0d3367be-136f-4244-88e5-17a2c987f34d",
+		"name": "Challenges",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "phone",
+			"item": [
+				{
+					"name": "Challenge phone catalog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51fe0acc-191c-4890-a385-f346f948993b",
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"for(var i = 0;i< jsonData.locations.length;i++){",
+									"    if (jsonData.locations[i].capabilities){",
+									"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        return",
+									"    }",
+									"    else{",
+									"        if (i==jsonData.locations.length-1){",
+									"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        }",
+									"    }",
+									"}",
+									"*/",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "scope",
+								"value": "order_pizza",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://192.168.99.102:8087/api/phones",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"99",
+								"102"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"phones"
+							]
+						},
+						"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+					},
+					"response": []
+				},
+				{
+					"name": "Challenge phone catalog id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51fe0acc-191c-4890-a385-f346f948993b",
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"for(var i = 0;i< jsonData.locations.length;i++){",
+									"    if (jsonData.locations[i].capabilities){",
+									"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        return",
+									"    }",
+									"    else{",
+									"        if (i==jsonData.locations.length-1){",
+									"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        }",
+									"    }",
+									"}",
+									"*/",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "scope",
+								"type": "text",
+								"value": "order_pizza",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://192.168.99.102:8087/api/phones?idSeq=5bdec08d08813b0001da1500",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"99",
+								"102"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"phones"
+							],
+							"query": [
+								{
+									"key": "idSeq",
+									"value": "5bdec08d08813b0001da1500"
+								}
+							]
+						},
+						"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+					},
+					"response": []
+				},
+				{
+					"name": "Challenge create phone catalog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51fe0acc-191c-4890-a385-f346f948993b",
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"for(var i = 0;i< jsonData.locations.length;i++){",
+									"    if (jsonData.locations[i].capabilities){",
+									"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        return",
+									"    }",
+									"    else{",
+									"        if (i==jsonData.locations.length-1){",
+									"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        }",
+									"    }",
+									"}",
+									"*/",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "scope",
+								"value": "order_pizza",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"1\",\n\t\"description\": \"Samsung\",\n\t \"imageReference\": \"http://samsung\",\n\t\"price\": 100.0\n\n}"
+						},
+						"url": {
+							"raw": "http://192.168.99.102:8087/api/phones",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"99",
+								"102"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"phones"
+							]
+						},
+						"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+					},
+					"response": []
+				},
+				{
+					"name": "Challenge create phone order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51fe0acc-191c-4890-a385-f346f948993b",
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"for(var i = 0;i< jsonData.locations.length;i++){",
+									"    if (jsonData.locations[i].capabilities){",
+									"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        return",
+									"    }",
+									"    else{",
+									"        if (i==jsonData.locations.length-1){",
+									"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        }",
+									"    }",
+									"}",
+									"*/",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "scope",
+								"type": "text",
+								"value": "order_pizza",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"customerName\": \"John\",\n\t\"customerSurname\": \"Doe\",\n\t\"email\": \"john@doe.com\",\n\t\"orderDetails\":[\n\t\t{\n\t\t\t\"id\": \"5bdf2228e64ada0001d9fdd9\",\n\t\t\t\"amount\": 2\n\t\t},\n\t\t{\n\t\t\t\"id\": \"5bdf2350e64ada0001a19f8b\",\n\t\t\t\"amount\": 3\n\t\t}\n\t]\n\n}"
+						},
+						"url": {
+							"raw": "http://192.168.99.102:8088/api/orders",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"99",
+								"102"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"orders"
+							]
+						},
+						"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+					},
+					"response": []
+				},
+				{
+					"name": "Challenge get  orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51fe0acc-191c-4890-a385-f346f948993b",
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"for(var i = 0;i< jsonData.locations.length;i++){",
+									"    if (jsonData.locations[i].capabilities){",
+									"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        return",
+									"    }",
+									"    else{",
+									"        if (i==jsonData.locations.length-1){",
+									"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        }",
+									"    }",
+									"}",
+									"*/",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "scope",
+								"type": "text",
+								"value": "order_pizza",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"customerName\": \"John\",\n\t\"customerSurname\": \"Doe\",\n\t\"email\": \"john@doe.com\",\n\t\"orderDetails\":[\n\t\t{\n\t\t\t\"id\": \"1\",\n\t\t\t\"amount\": 2\n\t\t},\n\t\t{\n\t\t\t\"id\": \"2\",\n\t\t\t\"amount\": 3\n\t\t}\n\t]\n\n}"
+						},
+						"url": {
+							"raw": "http://192.168.99.102:8088/api/orders",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"99",
+								"102"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"orders"
+							]
+						},
+						"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
