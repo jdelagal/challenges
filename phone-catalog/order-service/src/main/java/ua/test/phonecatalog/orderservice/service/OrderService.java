@@ -39,23 +39,30 @@ public class OrderService {
 		final Map<String, Integer> phoneToAmount = orderDetails.stream()
 				.collect(Collectors.toMap(OrderDetails::getId, OrderDetails::getAmount));
 
-		LOGGER.info("1");	
-		return null;
-		/*	
+		LOGGER.info("phoneToAmount: "+phoneToAmount);	
+		//return null;
+			
 		return this.httpClient.retrievePhones(new ArrayList<>(phoneToAmount.keySet()))
 				.map(phone -> {
 					final Integer amount = phoneToAmount.get(phone.getId());
+					LOGGER.info("amount: "+amount);	
 					final BigDecimal multiplicand = BigDecimal.valueOf(amount);
+					LOGGER.info("multiplicand: "+multiplicand);	
+					LOGGER.info("1: "+phone.getPrice().multiply(multiplicand));	
+					//LOGGER.info("2: "+phone.getPrice());	
+					
 					return phone.getPrice().multiply(multiplicand);
+					//return phone.getPrice();
 				})
 				.reduce(BigDecimal.ZERO, BigDecimal::add)
 				.flatMap(sum -> {
 					order.setTotalPrice(sum);
 					order.setOrderDetails(orderDetails);
+					LOGGER.info("order: "+order);
 					return this.orderRepository.save(order);
 				}).doOnSuccess(savedOrder -> LOGGER.info(savedOrder.toString()))
 					.doOnError(error -> LOGGER.severe("Failed to save order, msg=" + error.getMessage()));
-		*/
+		
 	}
 
 	private static <T> Predicate<T> distinctByProperty(Function<? super T, ?> keyExtractor) {

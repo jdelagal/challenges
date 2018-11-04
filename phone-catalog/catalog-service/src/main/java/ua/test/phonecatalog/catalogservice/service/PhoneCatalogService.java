@@ -22,7 +22,7 @@ public class PhoneCatalogService {
 	}
 
 	public Flux<Phone> find() {
-		JSONObject obj = new JSONObject("mock");
+		//JSONObject obj = new JSONObject("mock");
 		//return obj;
 		return this.phoneCatalogRepository.findAll();
 	}

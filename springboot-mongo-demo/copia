@@ -1,0 +1,5 @@
+./gradlew clean build && cp build/libs/springboot-mongo-demo.jar docker/
+cd docker
+docker build --tag=spring-demo-1.0 .
+docker rm -f spring-demo
+docker run -d --name spring-demo --network=spring_demo_net -p 8080:8080  spring-demo-1.0
