@@ -36,5 +36,9 @@ services:
     container_name: order-service-app
     ports:
       - "8088:8088"
+    environment:
+      - JPDA_ADDRESS=8000
+      - JPDA_TRANSPORT=dt_socket
+      - JAVA_OPTS= -agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n
     links:
       - mongodb-order-service-db

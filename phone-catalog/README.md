@@ -29,9 +29,9 @@ $ docker-compose up
 ## Questions
 Q1. How would you improve the system?
 + To prevent a database from being accessed directly via API on each request we can add a cache mechanism. It will reduce a load on a database server and improve response time.
-+ As service instances can change dynamically because of auto-scaling, failures, and upgrades, we should add a **discovery service** to provide available network locations.
-+ To prevent service failure from cascading to other services we should provide a **circuit braker**.
-+ One of the possible ways to upgrade the application is to switch from HTTP-based communication between services to event-driven model using, for example, Kafka Streams.
+As service instances can change dynamically because of auto-scaling, failures, and upgrades, we should add a discovery service to provide available network locations.
+To prevent service failure from cascading to other services we should provide a circuit braker.
+One of the possible ways to upgrade the application is to switch from HTTP-based communication between services to event-driven model using, for example, Kafka Streams.
 
 Q2. How would you avoid your order API to be overflow?
-+ To prevent an API from being overwhelmed we can add a **back pressure** mechanism provided by reactive nature of Spring WebFlux (as an implementation of Reactive Streams Manifesto).
++ To avoid this we can add a gateway API limiting the throattling through a quota policy.
