@@ -1,0 +1,1380 @@
+{
+	"info": {
+		"_postman_id": "0d3367be-136f-4244-88e5-17a2c987f34d",
+		"name": "Challenges",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "phone",
+			"item": [
+				{
+					"name": "Challenge phone catalog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51fe0acc-191c-4890-a385-f346f948993b",
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"for(var i = 0;i< jsonData.locations.length;i++){",
+									"    if (jsonData.locations[i].capabilities){",
+									"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        return",
+									"    }",
+									"    else{",
+									"        if (i==jsonData.locations.length-1){",
+									"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        }",
+									"    }",
+									"}",
+									"*/",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "scope",
+								"value": "order_pizza",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.99.101:8087/api/phones",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"99",
+								"101"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"phones"
+							]
+						},
+						"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+					},
+					"response": []
+				},
+				{
+					"name": "Challenge phone catalog id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51fe0acc-191c-4890-a385-f346f948993b",
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"for(var i = 0;i< jsonData.locations.length;i++){",
+									"    if (jsonData.locations[i].capabilities){",
+									"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        return",
+									"    }",
+									"    else{",
+									"        if (i==jsonData.locations.length-1){",
+									"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        }",
+									"    }",
+									"}",
+									"*/",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "scope",
+								"type": "text",
+								"value": "order_pizza",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.99.101:8087/api/phones?idSeq=5bdfeb3208813b00017e6e86",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"99",
+								"101"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"phones"
+							],
+							"query": [
+								{
+									"key": "idSeq",
+									"value": "5bdfeb3208813b00017e6e86"
+								}
+							]
+						},
+						"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+					},
+					"response": []
+				},
+				{
+					"name": "Challenge create phone catalog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51fe0acc-191c-4890-a385-f346f948993b",
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"for(var i = 0;i< jsonData.locations.length;i++){",
+									"    if (jsonData.locations[i].capabilities){",
+									"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        return",
+									"    }",
+									"    else{",
+									"        if (i==jsonData.locations.length-1){",
+									"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        }",
+									"    }",
+									"}",
+									"*/",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "scope",
+								"value": "order_pizza",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"1\",\n\t\"description\": \"Samsung\",\n\t \"imageReference\": \"http://samsung\",\n\t\"price\": 100.0\n\n}"
+						},
+						"url": {
+							"raw": "http://192.168.99.101:8087/api/phones",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"99",
+								"101"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"phones"
+							]
+						},
+						"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+					},
+					"response": []
+				},
+				{
+					"name": "Challenge create phone order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51fe0acc-191c-4890-a385-f346f948993b",
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"for(var i = 0;i< jsonData.locations.length;i++){",
+									"    if (jsonData.locations[i].capabilities){",
+									"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        return",
+									"    }",
+									"    else{",
+									"        if (i==jsonData.locations.length-1){",
+									"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        }",
+									"    }",
+									"}",
+									"*/",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "scope",
+								"type": "text",
+								"value": "order_pizza",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"customerName\": \"John\",\n\t\"customerSurname\": \"Doe\",\n\t\"email\": \"john@doe.com\",\n\t\"orderDetails\":[\n\t\t{\n\t\t\t\"id\": \"5bdfeb3208813b00017e6e86\",\n\t\t\t\"amount\": 2\n\t\t},\n\t\t{\n\t\t\t\"id\": \"5bdf2350e64ada0001a19f8b\",\n\t\t\t\"amount\": 3\n\t\t}\n\t]\n\n}"
+						},
+						"url": {
+							"raw": "http://192.168.99.101:8088/api/orders",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"99",
+								"101"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"orders"
+							]
+						},
+						"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+					},
+					"response": []
+				},
+				{
+					"name": "Challenge get  orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51fe0acc-191c-4890-a385-f346f948993b",
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"for(var i = 0;i< jsonData.locations.length;i++){",
+									"    if (jsonData.locations[i].capabilities){",
+									"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        return",
+									"    }",
+									"    else{",
+									"        if (i==jsonData.locations.length-1){",
+									"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+									"        }",
+									"    }",
+									"}",
+									"*/",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "scope",
+								"type": "text",
+								"value": "order_pizza",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.168.99.101:8088/api/orders",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"99",
+								"101"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"orders"
+							]
+						},
+						"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "apigee",
+			"item": [
+				{
+					"name": "tests",
+					"item": [
+						{
+							"name": "create",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "51fe0acc-191c-4890-a385-f346f948993b",
+										"exec": [
+											"/*var jsonData = JSON.parse(responseBody);",
+											"for(var i = 0;i< jsonData.locations.length;i++){",
+											"    if (jsonData.locations[i].capabilities){",
+											"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        return",
+											"    }",
+											"    else{",
+											"        if (i==jsonData.locations.length-1){",
+											"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        }",
+											"    }",
+											"}",
+											"*/",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "scope",
+										"type": "text",
+										"value": "order_pizza",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"1\",\n\t\"description\": \"Samsung\",\n\t \"imageReference\": \"http://samsung\",\n\t\"price\": 100.0\n\n}"
+								},
+								"url": {
+									"raw": "http://192.168.99.102:3000/data/into/db",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"99",
+										"102"
+									],
+									"port": "3000",
+									"path": [
+										"data",
+										"into",
+										"db"
+									]
+								},
+								"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+							},
+							"response": []
+						},
+						{
+							"name": "get",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "51fe0acc-191c-4890-a385-f346f948993b",
+										"exec": [
+											"/*var jsonData = JSON.parse(responseBody);",
+											"for(var i = 0;i< jsonData.locations.length;i++){",
+											"    if (jsonData.locations[i].capabilities){",
+											"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        return",
+											"    }",
+											"    else{",
+											"        if (i==jsonData.locations.length-1){",
+											"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        }",
+											"    }",
+											"}",
+											"*/",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "scope",
+										"type": "text",
+										"value": "order_pizza",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://192.168.99.102:3000/data/from/db",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"99",
+										"102"
+									],
+									"port": "3000",
+									"path": [
+										"data",
+										"from",
+										"db"
+									]
+								},
+								"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+							},
+							"response": []
+						},
+						{
+							"name": "lab1 bronce",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "51fe0acc-191c-4890-a385-f346f948993b",
+										"exec": [
+											"/*var jsonData = JSON.parse(responseBody);",
+											"for(var i = 0;i< jsonData.locations.length;i++){",
+											"    if (jsonData.locations[i].capabilities){",
+											"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        return",
+											"    }",
+											"    else{",
+											"        if (i==jsonData.locations.length-1){",
+											"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        }",
+											"    }",
+											"}",
+											"*/",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "scope",
+										"type": "text",
+										"value": "order_pizza",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://jdelagal-eval-test.apigee.net/v1/lab1_employee_proxy?apikey=r4kAg6KQC2Dy7q3KJxdeXjSFf1tkDAYw",
+									"protocol": "http",
+									"host": [
+										"jdelagal-eval-test",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"v1",
+										"lab1_employee_proxy"
+									],
+									"query": [
+										{
+											"key": "apikey",
+											"value": "r4kAg6KQC2Dy7q3KJxdeXjSFf1tkDAYw"
+										}
+									]
+								},
+								"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+							},
+							"response": []
+						},
+						{
+							"name": "lab1 platinium",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "51fe0acc-191c-4890-a385-f346f948993b",
+										"exec": [
+											"/*var jsonData = JSON.parse(responseBody);",
+											"for(var i = 0;i< jsonData.locations.length;i++){",
+											"    if (jsonData.locations[i].capabilities){",
+											"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        return",
+											"    }",
+											"    else{",
+											"        if (i==jsonData.locations.length-1){",
+											"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        }",
+											"    }",
+											"}",
+											"*/",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "scope",
+										"type": "text",
+										"value": "order_pizza",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://jdelagal-eval-test.apigee.net/v1/lab1_employee_proxy?apikey=wyCAy2Bbu6Pse8bTasnMj262GYxYUQ46",
+									"protocol": "http",
+									"host": [
+										"jdelagal-eval-test",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"v1",
+										"lab1_employee_proxy"
+									],
+									"query": [
+										{
+											"key": "apikey",
+											"value": "wyCAy2Bbu6Pse8bTasnMj262GYxYUQ46"
+										}
+									]
+								},
+								"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+							},
+							"response": []
+						},
+						{
+							"name": "lab1 platinium cache",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "51fe0acc-191c-4890-a385-f346f948993b",
+										"exec": [
+											"/*var jsonData = JSON.parse(responseBody);",
+											"for(var i = 0;i< jsonData.locations.length;i++){",
+											"    if (jsonData.locations[i].capabilities){",
+											"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        return",
+											"    }",
+											"    else{",
+											"        if (i==jsonData.locations.length-1){",
+											"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        }",
+											"    }",
+											"}",
+											"*/",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "cc2a4f20-2e00-31bc-a6da-c96e50172a68",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "scope",
+										"type": "text",
+										"value": "order_pizza",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://jdelagal-eval-test.apigee.net/v1/lab1_employee_proxy?apikey=wyCAy2Bbu6Pse8bTasnMj262GYxYUQ46&cache=12323",
+									"protocol": "http",
+									"host": [
+										"jdelagal-eval-test",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"v1",
+										"lab1_employee_proxy"
+									],
+									"query": [
+										{
+											"key": "apikey",
+											"value": "wyCAy2Bbu6Pse8bTasnMj262GYxYUQ46"
+										},
+										{
+											"key": "cache",
+											"value": "12323"
+										}
+									]
+								},
+								"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+							},
+							"response": []
+						},
+						{
+							"name": "test client cred token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "51fe0acc-191c-4890-a385-f346f948993b",
+										"exec": [
+											"/*var jsonData = JSON.parse(responseBody);",
+											"for(var i = 0;i< jsonData.locations.length;i++){",
+											"    if (jsonData.locations[i].capabilities){",
+											"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        return",
+											"    }",
+											"    else{",
+											"        if (i==jsonData.locations.length-1){",
+											"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        }",
+											"    }",
+											"}",
+											"*/",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "gWdbrVNyBVfcekGU",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "nOp1AkNlfriAKtmiHvDfe5Rp989QGplQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "scope",
+										"type": "text",
+										"value": "order_pizza",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://jdelagal-eval-test.apigee.net/challenge/oauth/accesstoken",
+									"protocol": "http",
+									"host": [
+										"jdelagal-eval-test",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"challenge",
+										"oauth",
+										"accesstoken"
+									]
+								},
+								"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+							},
+							"response": []
+						},
+						{
+							"name": "test client cred token Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "51fe0acc-191c-4890-a385-f346f948993b",
+										"exec": [
+											"/*var jsonData = JSON.parse(responseBody);",
+											"for(var i = 0;i< jsonData.locations.length;i++){",
+											"    if (jsonData.locations[i].capabilities){",
+											"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        return",
+											"    }",
+											"    else{",
+											"        if (i==jsonData.locations.length-1){",
+											"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        }",
+											"    }",
+											"}",
+											"*/",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "gWdbrVNyBVfcekGU",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "nOp1AkNlfriAKtmiHvDfe5Rp989QGplQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "scope",
+										"type": "text",
+										"value": "order_pizza",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://jdelagal-eval-test.apigee.net/oauth/client_credential?grant_type=client_credentials",
+									"protocol": "https",
+									"host": [
+										"jdelagal-eval-test",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"oauth",
+										"client_credential"
+									],
+									"query": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials"
+										}
+									]
+								},
+								"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+							},
+							"response": []
+						},
+						{
+							"name": "get recursos test client cred",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "51fe0acc-191c-4890-a385-f346f948993b",
+										"exec": [
+											"/*var jsonData = JSON.parse(responseBody);",
+											"for(var i = 0;i< jsonData.locations.length;i++){",
+											"    if (jsonData.locations[i].capabilities){",
+											"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        return",
+											"    }",
+											"    else{",
+											"        if (i==jsonData.locations.length-1){",
+											"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        }",
+											"    }",
+											"}",
+											"*/",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "Authorization",
+											"value": "bearer  876Q7A44VmHqjBbXCIUEURCtrSAc",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://jdelagal-eval-test.apigee.net/mock-target-api",
+									"protocol": "http",
+									"host": [
+										"jdelagal-eval-test",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"mock-target-api"
+									]
+								},
+								"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "recurso",
+					"item": [
+						{
+							"name": "getAccess Bronce",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "51fe0acc-191c-4890-a385-f346f948993b",
+										"exec": [
+											"/*var jsonData = JSON.parse(responseBody);",
+											"for(var i = 0;i< jsonData.locations.length;i++){",
+											"    if (jsonData.locations[i].capabilities){",
+											"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        return",
+											"    }",
+											"    else{",
+											"        if (i==jsonData.locations.length-1){",
+											"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        }",
+											"    }",
+											"}",
+											"*/",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "D8rAom2aCXGAdUBi",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "I7cAPPh8jSgakTvJkyjQLSymTUtfZ5yd",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "scope",
+										"type": "text",
+										"value": "order_pizza",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://jdelagal-eval-test.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials",
+									"protocol": "https",
+									"host": [
+										"jdelagal-eval-test",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"oauth",
+										"client_credential",
+										"accesstoken"
+									],
+									"query": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials"
+										}
+									]
+								},
+								"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+							},
+							"response": []
+						},
+						{
+							"name": "getAccess Platinium",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "51fe0acc-191c-4890-a385-f346f948993b",
+										"exec": [
+											"/*var jsonData = JSON.parse(responseBody);",
+											"for(var i = 0;i< jsonData.locations.length;i++){",
+											"    if (jsonData.locations[i].capabilities){",
+											"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        return",
+											"    }",
+											"    else{",
+											"        if (i==jsonData.locations.length-1){",
+											"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        }",
+											"    }",
+											"}",
+											"*/",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "4Wjhb3jzKZf03BxB",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "wtr7vjvHUUOdLbxyyFln0X9KM0jiHOga",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "scope",
+										"type": "text",
+										"value": "order_pizza",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://jdelagal-eval-test.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials",
+									"protocol": "https",
+									"host": [
+										"jdelagal-eval-test",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"oauth",
+										"client_credential",
+										"accesstoken"
+									],
+									"query": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials"
+										}
+									]
+								},
+								"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+							},
+							"response": []
+						},
+						{
+							"name": "getRecurso Bronce",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "51fe0acc-191c-4890-a385-f346f948993b",
+										"exec": [
+											"/*var jsonData = JSON.parse(responseBody);",
+											"for(var i = 0;i< jsonData.locations.length;i++){",
+											"    if (jsonData.locations[i].capabilities){",
+											"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        return",
+											"    }",
+											"    else{",
+											"        if (i==jsonData.locations.length-1){",
+											"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        }",
+											"    }",
+											"}",
+											"*/",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "4yfIQwFXKcS7tqOntKBNVz21EmqO",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "scope",
+										"type": "text",
+										"value": "order_pizza",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "http://jdelagal-eval-test.apigee.net/recurso-oauth2",
+									"protocol": "http",
+									"host": [
+										"jdelagal-eval-test",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"recurso-oauth2"
+									]
+								},
+								"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+							},
+							"response": []
+						},
+						{
+							"name": "getRecurso Platinium",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "51fe0acc-191c-4890-a385-f346f948993b",
+										"exec": [
+											"/*var jsonData = JSON.parse(responseBody);",
+											"for(var i = 0;i< jsonData.locations.length;i++){",
+											"    if (jsonData.locations[i].capabilities){",
+											"        postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        return",
+											"    }",
+											"    else{",
+											"        if (i==jsonData.locations.length-1){",
+											"             postman.setEnvironmentVariable(\"location_id\", jsonData.locations[i].id);",
+											"        }",
+											"    }",
+											"}",
+											"*/",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "TsbKAiRInqiXsNnXvwEkq7WxiVoj",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "scope",
+										"type": "text",
+										"value": "order_pizza",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "http://jdelagal-eval-test.apigee.net/recurso-oauth2",
+									"protocol": "http",
+									"host": [
+										"jdelagal-eval-test",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"recurso-oauth2"
+									]
+								},
+								"description": "Provides summary information for all of a business's locations. Your first location with credit card processing (or last location if none) will be automatically added to your environment as a location_id for future requests. "
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
